@@ -4,25 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/common-util/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/congyijiu/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/service-util/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/congyijiu/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/congyijiu/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/ServiceAuthApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="tyfytf">
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/exams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/questions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/userQuestions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/resources/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,8 +72,16 @@
       <option name="presentableId" value="Default" />
       <updated>1685456363634</updated>
       <workItem from="1685456364933" duration="842000" />
-      <workItem from="1685457265162" duration="642000" />
+      <workItem from="1685457265162" duration="3288000" />
     </task>
+    <task id="LOCAL-00001" summary="tyfytf">
+      <created>1685457919462</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685457919462</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,5 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="tyfytf" />
+    <option name="LAST_COMMIT_MESSAGE" value="tyfytf" />
   </component>
 </project>
