@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.congyijiu")
-@MapperScan("com.atguigu.*.mapper")
+@MapperScan("com.congyijiu.*.mapper")
 public class ServiceAuthApplication {
 
     public static void main(String[] args) {

@@ -9,12 +9,12 @@ import lombok.Data;
  * @create 2023-05-30-23:35
  */
 @Data
-@TableName("users")
-public class users {
+@TableName("Users")
+public class Users {
     private static final long serialVersionUID = 1L;
 
-    @TableField("user_id")
-    private Integer userId;
+    @TableField("id")
+    private Integer id;
 
     @TableField("username")
     private String username;

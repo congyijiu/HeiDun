@@ -10,7 +10,7 @@ import lombok.Data;
  */
 @Data
 @TableName("user_questions")
-public class userQuestions {
+public class UserQuestions {
     private static final long serialVersionUID = 1L;
 
     @TableField("id")

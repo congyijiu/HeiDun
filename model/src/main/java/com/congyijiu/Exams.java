@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 
 /**
@@ -12,12 +11,12 @@ import java.time.LocalDateTime;
  * @create 2023-05-30-23:41
  */
 @Data
-@TableName("exams")
-public class exams {
+@TableName("Exams")
+public class Exams {
     private static final long serialVersionUID = 1L;
 
-    @TableField("exam_id")
-    private Integer examId;
+    @TableField("id")
+    private Integer id;
 
     @TableField("subject")
     private String subject;
