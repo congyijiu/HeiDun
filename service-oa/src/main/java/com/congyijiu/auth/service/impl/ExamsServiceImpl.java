@@ -39,6 +39,7 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
 
         for (Questions question : randomQuestions) {
             UserExams userExam = new UserExams();
+            userExam.setId(0L);
             userExam.setExamId(examId);
             userExam.setQuestionId(question.getId());
             userExams.add(userExam);

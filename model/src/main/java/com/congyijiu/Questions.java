@@ -19,8 +19,8 @@ public class Questions {
     @TableField("description")
     private String description;
 
-    @TableField("option")
-    private String option;
+    @TableField("options")
+    private String options;
 
     @TableField("answer")
     private Integer answer;

@@ -28,14 +28,17 @@ public class Exams {
     @TableField("num_questions")
     private Integer numQuestions;
 
-    @TableField("staus")
-    private Integer staus;
+    @TableField("status")
+    private Integer status;
 
     @TableField("score")
     private Integer score;
 
     @TableField("user_id")
     private Long userId;
+
+    @TableField("result")
+    private String result;
 
     @TableField("type")
     private Integer type;

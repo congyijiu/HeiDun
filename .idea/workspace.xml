@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="awawa">
+    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="awawaa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/ExamsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/ExamsDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java" afterDir="false" />
     </list>
@@ -101,7 +98,7 @@
       <workItem from="1685456364933" duration="842000" />
       <workItem from="1685457265162" duration="3380000" />
       <workItem from="1685508528410" duration="15208000" />
-      <workItem from="1685610903695" duration="1866000" />
+      <workItem from="1685610903695" duration="3093000" />
     </task>
     <task id="LOCAL-00001" summary="tyfytf">
       <created>1685457919462</created>
@@ -138,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685611092433</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="awawaa">
+      <created>1685613262296</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685613262296</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,20 +165,16 @@
     <MESSAGE value="tatata" />
     <MESSAGE value="awaw" />
     <MESSAGE value="awawa" />
-    <option name="LAST_COMMIT_MESSAGE" value="awawa" />
+    <MESSAGE value="awawaa" />
+    <option name="LAST_COMMIT_MESSAGE" value="awawaa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/filter/LoginCheckFilter.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
