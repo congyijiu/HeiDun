@@ -3,6 +3,9 @@ package com.congyijiu;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import org.omg.CORBA.PRIVATE_MEMBER;
+
+import java.net.Inet4Address;
 
 /**
  * @author congyijiu
@@ -24,4 +27,7 @@ public class Questions {
 
     @TableField("answer")
     private Integer answer;
+
+    @TableField(exist = false)
+    private Integer correct;
 }

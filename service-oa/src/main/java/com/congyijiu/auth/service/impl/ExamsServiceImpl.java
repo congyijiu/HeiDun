@@ -35,18 +35,21 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
         ExamsDto examsDto = new ExamsDto();
         examsDto.setQuestions(randomQuestions);
         examsDto.setExamId(examId);
-        ArrayList<UserExams> userExams = new ArrayList<>();
+        return examsDto;
+    }
 
-        for (Questions question : randomQuestions) {
-            UserExams userExam = new UserExams();
-            userExam.setId(0L);
-            userExam.setExamId(examId);
-            userExam.setQuestionId(question.getId());
-            userExams.add(userExam);
+    @Override
+    public ExamsDto submitExams(Long userId, ExamsDto examsDto) {
+        List<Questions> questions = examsDto.getQuestions();
+        ArrayList<Long> qId = new ArrayList<>();
+        for (Questions question : questions) {
+            //获取考试题目编号集合
+            Long id = question.getId();
+            qId.add(id);
         }
-
-        userExamsService.saveBatch(userExams);
-
+        //查询题目答案解析等
+        List<Questions> questionsList = questionsService.listByIds(qId);
+        examsDto.setQuestions(questionsList);
         return examsDto;
     }
 }

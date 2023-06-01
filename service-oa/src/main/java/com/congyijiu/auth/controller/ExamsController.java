@@ -6,6 +6,7 @@ import com.congyijiu.auth.service.ExamsService;
 import com.congyijiu.common.jwt.JwtHelper;
 import com.congyijiu.common.result.Result;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,7 @@ public class ExamsController {
     @Autowired
     private ExamsService examsService;
 
+    @ApiOperation("报名考试")
     @PostMapping("/registeExams")
     public Result registeExams(@RequestHeader("token") String token , @RequestBody Exams exams) {
         Long userId = JwtHelper.getUserId(token);
@@ -29,10 +31,21 @@ public class ExamsController {
         return Result.ok();
     }
 
-    @PostMapping("/startExams")
-    public Result startExams(@RequestHeader("token") String token , @RequestBody Exams exams) {
+    @ApiOperation("开始考试")
+    @PostMapping("/startExam/{examsId}")
+    public Result startExams(@RequestHeader("token") String token , Long examsId) {
         Long userId = JwtHelper.getUserId(token);
-        ExamsDto examsDto = examsService.startExam(userId, exams.getId());
+        ExamsDto examsDto = examsService.startExam(userId, examsId);
         return Result.ok(examsDto);
     }
+
+    @ApiOperation("提交试卷")
+    @PostMapping("/submitExams")
+    public Result submitExams(@RequestHeader("token") String token , @RequestBody ExamsDto examsDto) {
+        Long userId = JwtHelper.getUserId(token);
+        ExamsDto examsDto1 = examsService.submitExams(userId, examsDto);
+        return Result.ok(examsDto1);
+    }
+
+
 }

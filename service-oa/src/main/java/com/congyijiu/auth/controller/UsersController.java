@@ -7,6 +7,7 @@ import com.congyijiu.auth.service.UsersService;
 import com.congyijiu.common.jwt.JwtHelper;
 import com.congyijiu.common.result.Result;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,7 @@ public class UsersController {
     @Autowired
     private UsersService usersService;
 
+    @ApiOperation("获取个人信息")
     @GetMapping("/getUser")
     public Result getUser(@RequestHeader("token") String token) {
         Long userId = JwtHelper.getUserId(token);
@@ -33,6 +35,7 @@ public class UsersController {
     }
 
 
+    @ApiOperation("修改个人信息")
     @PutMapping("/updateUser")
     public Result updateUser(@RequestHeader("token") String token, @RequestBody UsersDto usersDto) {
         Long userId = JwtHelper.getUserId(token);
@@ -53,6 +56,7 @@ public class UsersController {
         return Result.ok();
     }
 
+    @ApiOperation("获取用户预约信息")
     @GetMapping("/getUsersAppointment")
     public Result getUsersAppointment(@RequestHeader("token") String token) {
         Long userId = JwtHelper.getUserId(token);

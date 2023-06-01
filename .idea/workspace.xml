@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="awawaa">
+    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="01">
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/UserExamsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UserExamsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/ExamsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/ExamsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Questions.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Questions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +103,8 @@
       <workItem from="1685456364933" duration="842000" />
       <workItem from="1685457265162" duration="3380000" />
       <workItem from="1685508528410" duration="15208000" />
-      <workItem from="1685610903695" duration="3093000" />
+      <workItem from="1685610903695" duration="3629000" />
+      <workItem from="1685628105491" duration="4063000" />
     </task>
     <task id="LOCAL-00001" summary="tyfytf">
       <created>1685457919462</created>
@@ -142,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685613262296</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="01">
+      <created>1685614465147</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685614465147</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,17 +179,7 @@
     <MESSAGE value="awaw" />
     <MESSAGE value="awawa" />
     <MESSAGE value="awawaa" />
-    <option name="LAST_COMMIT_MESSAGE" value="awawaa" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="01" />
+    <option name="LAST_COMMIT_MESSAGE" value="01" />
   </component>
 </project>

@@ -15,4 +15,6 @@ public class ExamsDto {
     private Long examId;
 
     List<Questions> questions;
+
+
 }
