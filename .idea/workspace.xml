@@ -4,28 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="awaw">
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/ExamsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/UsersDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java" afterDir="false" />
+    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="awawa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common-util/src/main/java/com/congyijiu/common/jwt/JwtHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/congyijiu/common/jwt/JwtHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/ExamsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/ExamsDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Questions.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Questions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/UserQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/UserExams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/ServiceAuthApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/ServiceAuthApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/filter/LoginCheckFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/mapper/UserQuestionsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/mapper/UserExamsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/QuestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/QuestionsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UserQuestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UserExamsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UsersService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UserQuestionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UserExamsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UsersServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,25 +41,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "9e8e90fd9deb19ca70adff9666833ee8"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9e8e90fd9deb19ca70adff9666833ee8&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.ServiceAuthApplication">
     <configuration name="test.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service-oa" />
@@ -115,6 +101,7 @@
       <workItem from="1685456364933" duration="842000" />
       <workItem from="1685457265162" duration="3380000" />
       <workItem from="1685508528410" duration="15208000" />
+      <workItem from="1685610903695" duration="1866000" />
     </task>
     <task id="LOCAL-00001" summary="tyfytf">
       <created>1685457919462</created>
@@ -137,7 +124,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685522038288</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="awaw">
+      <created>1685610937120</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685610937120</updated>
+    </task>
+    <task id="LOCAL-00005" summary="awawa">
+      <created>1685611092433</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685611092433</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +160,23 @@
     <MESSAGE value="tyfytf" />
     <MESSAGE value="tatata" />
     <MESSAGE value="awaw" />
-    <option name="LAST_COMMIT_MESSAGE" value="awaw" />
+    <MESSAGE value="awawa" />
+    <option name="LAST_COMMIT_MESSAGE" value="awawa" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/filter/LoginCheckFilter.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

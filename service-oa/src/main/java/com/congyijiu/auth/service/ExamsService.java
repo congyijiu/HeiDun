@@ -13,5 +13,5 @@ import java.util.List;
  */
 
 public interface ExamsService extends IService<Exams> {
-    public ExamsDto startExam(Long userId);
+    public ExamsDto startExam(Long userId,Long examId);
 }

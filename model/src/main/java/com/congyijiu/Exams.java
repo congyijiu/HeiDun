@@ -22,11 +22,8 @@ public class Exams {
     @TableField("subject")
     private String subject;
 
-    @TableField("start_time")
-    private Date startTime;
-
-    @TableField("end_time")
-    private Date endTime;
+    @TableField("exams_time")
+    private String examsTime;
 
     @TableField("num_questions")
     private Integer numQuestions;

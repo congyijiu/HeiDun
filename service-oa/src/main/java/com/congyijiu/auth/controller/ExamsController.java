@@ -1,5 +1,6 @@
 package com.congyijiu.auth.controller;
 
+import com.congyijiu.Dto.ExamsDto;
 import com.congyijiu.Exams;
 import com.congyijiu.auth.service.ExamsService;
 import com.congyijiu.common.jwt.JwtHelper;
@@ -31,7 +32,7 @@ public class ExamsController {
     @PostMapping("/startExams")
     public Result startExams(@RequestHeader("token") String token , @RequestBody Exams exams) {
         Long userId = JwtHelper.getUserId(token);
-
-        return Result.ok();
+        ExamsDto examsDto = examsService.startExam(userId, exams.getId());
+        return Result.ok(examsDto);
     }
 }
