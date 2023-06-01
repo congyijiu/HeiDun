@@ -1,11 +1,12 @@
 package com.congyijiu.auth.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.congyijiu.UserQuestions;
+import com.congyijiu.UserExams;
 
 /**
  * @author congyijiu
  * @create 2023-05-31-13:06
  */
-public interface UserQuestionsService extends IService<UserQuestions>{
+public interface UserExamsService extends IService<UserExams>{
+
 }

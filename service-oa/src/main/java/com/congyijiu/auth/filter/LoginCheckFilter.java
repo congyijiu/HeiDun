@@ -34,7 +34,10 @@ public class LoginCheckFilter implements Filter{
         String[] urls = new String[]{
                 "/index/login",
                 "/index/logout",
-                "doc.html/*",
+                "/doc.html/*",
+                "/swagger-resources/*",
+                "/v2/*",
+                "/*",
         };
 
         //2、判断本次请求是否需要处理
@@ -65,8 +68,9 @@ public class LoginCheckFilter implements Filter{
      * @return
      */
     public boolean check(String[] urls,String requestURI){
+        AntPathMatcher antPathMatcher = new AntPathMatcher();
         for (String url : urls) {
-            boolean match = PATH_MATCHER.match(url, requestURI);
+            boolean match = antPathMatcher.matchStart(url, requestURI);
             if(match){
                 return true;
             }

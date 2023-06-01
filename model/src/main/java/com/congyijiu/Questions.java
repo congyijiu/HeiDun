@@ -14,7 +14,7 @@ public class Questions {
     private static final long serialVersionUID = 1L;
 
     @TableField("id")
-    private Integer id;
+    private Long id;
 
     @TableField("description")
     private String description;

@@ -14,7 +14,7 @@ public class JwtHelper {
     private static long tokenExpiration = 365 * 24 * 60 * 60 * 1000;
     private static String tokenSignKey = "123456";
 
-    public static String createToken(Integer userId, String username) {
+    public static String createToken(Long userId, String username) {
         String token = Jwts.builder()
                 .setSubject("AUTH-USER")
                 .setExpiration(new Date(System.currentTimeMillis() + tokenExpiration))
@@ -54,7 +54,7 @@ public class JwtHelper {
     }
 
     public static void main(String[] args) {
-        String token = JwtHelper.createToken(1, "admin");
+        String token = JwtHelper.createToken(1L, "admin");
         System.out.println(token);
         System.out.println(JwtHelper.getUserId(token));
         System.out.println(JwtHelper.getUsername(token));

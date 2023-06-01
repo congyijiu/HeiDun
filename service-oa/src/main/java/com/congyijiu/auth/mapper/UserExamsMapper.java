@@ -1,7 +1,7 @@
 package com.congyijiu.auth.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.congyijiu.UserQuestions;
+import com.congyijiu.UserExams;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -9,5 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @create 2023-05-31-13:03
  */
 @Mapper
-public interface UserQuestionsMapper extends BaseMapper<UserQuestions> {
+public interface UserExamsMapper extends BaseMapper<UserExams> {
 }

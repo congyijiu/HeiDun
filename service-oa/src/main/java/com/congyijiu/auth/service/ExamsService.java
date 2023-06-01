@@ -1,7 +1,11 @@
 package com.congyijiu.auth.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.congyijiu.Dto.ExamsDto;
 import com.congyijiu.Exams;
+import com.congyijiu.Questions;
+
+import java.util.List;
 
 /**
  * @author congyijiu
@@ -9,4 +13,5 @@ import com.congyijiu.Exams;
  */
 
 public interface ExamsService extends IService<Exams> {
+    public ExamsDto startExam(Long userId);
 }

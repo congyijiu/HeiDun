@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * @author congyijiu
@@ -16,16 +17,16 @@ public class Exams {
     private static final long serialVersionUID = 1L;
 
     @TableField("id")
-    private Integer id;
+    private Long id;
 
     @TableField("subject")
     private String subject;
 
     @TableField("start_time")
-    private LocalDateTime startTime;
+    private Date startTime;
 
     @TableField("end_time")
-    private LocalDateTime endTime;
+    private Date endTime;
 
     @TableField("num_questions")
     private Integer numQuestions;
@@ -37,6 +38,9 @@ public class Exams {
     private Integer score;
 
     @TableField("user_id")
-    private Integer userId;
+    private Long userId;
+
+    @TableField("type")
+    private Integer type;
 
 }

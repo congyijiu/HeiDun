@@ -9,18 +9,18 @@ import lombok.Data;
  * @create 2023-05-30-23:46
  */
 @Data
-@TableName("user_questions")
-public class UserQuestions {
+@TableName("user_exams")
+public class UserExams {
     private static final long serialVersionUID = 1L;
 
     @TableField("id")
-    private Integer id;
+    private Long id;
 
     @TableField("question_id")
-    private Integer questionId;
+    private Long questionId;
 
     @TableField("exam_id")
-    private Integer examId;
+    private Long examId;
 
     @TableField("correct")
     private Integer correct;

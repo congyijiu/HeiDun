@@ -1,16 +1,14 @@
-package com.congyijiu;
+package com.congyijiu.Dto;
 
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
  * @author congyijiu
- * @create 2023-05-30-23:35
+ * @create 2023-05-31-18:18
  */
 @Data
-@TableName("Users")
-public class Users {
+public class UsersDto {
     private static final long serialVersionUID = 1L;
 
     @TableField("id")
@@ -18,6 +16,8 @@ public class Users {
 
     @TableField("username")
     private String username;
+
+    private String oldPassword;
 
     @TableField("password")
     private String password;

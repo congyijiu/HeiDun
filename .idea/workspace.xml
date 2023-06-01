@@ -4,38 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="tatata">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/congyijiu/common/jwt/JwtHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/congyijiu/common/result/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/congyijiu/common/result/ResultCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/congyijiu/common/config/knife4j/Knife4jConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Vo/LoginVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UsersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/filter/LoginCheckFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/mapper/ExamsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/mapper/QuestionsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/mapper/UserQuestionsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/mapper/UsersMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/QuestionsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UserQuestionsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UsersService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UserQuestionsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/test/java/com/congyijiu/auth/test.java" afterDir="false" />
+    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="awaw">
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/ExamsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/UsersDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common-util/src/main/java/com/congyijiu/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/service-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/congyijiu/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/exams.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/questions.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Questions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/userQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/UserQuestions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/users.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/src/main/java/com/congyijiu/common/jwt/JwtHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/congyijiu/common/jwt/JwtHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Questions.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Questions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/UserQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/UserExams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/ServiceAuthApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/ServiceAuthApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/filter/LoginCheckFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/mapper/UserQuestionsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/mapper/UserExamsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/QuestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/QuestionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UserQuestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UserExamsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/QuestionsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UserQuestionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UserExamsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UsersServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +114,7 @@
       <updated>1685456363634</updated>
       <workItem from="1685456364933" duration="842000" />
       <workItem from="1685457265162" duration="3380000" />
-      <workItem from="1685508528410" duration="5632000" />
+      <workItem from="1685508528410" duration="15208000" />
     </task>
     <task id="LOCAL-00001" summary="tyfytf">
       <created>1685457919462</created>
@@ -140,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685462419350</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="awaw">
+      <created>1685522038288</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685522038288</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +158,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="tyfytf" />
     <MESSAGE value="tatata" />
-    <option name="LAST_COMMIT_MESSAGE" value="tatata" />
+    <MESSAGE value="awaw" />
+    <option name="LAST_COMMIT_MESSAGE" value="awaw" />
   </component>
 </project>
