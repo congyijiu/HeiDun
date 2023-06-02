@@ -12,7 +12,9 @@ import com.congyijiu.auth.service.UserExamsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,6 +30,7 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
     @Autowired
     private UserExamsService userExamsService;
 
+    //开始考试
     @Override
     public ExamsDto startExam(Long userId, Long examId) {
         List<Questions> randomQuestions = questionsService.getRandomQuestions();
@@ -38,6 +41,7 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
         return examsDto;
     }
 
+    //提交考试
     @Override
     public ExamsDto submitExams(Long userId, ExamsDto examsDto) {
         List<Questions> questions = examsDto.getQuestions();
@@ -52,4 +56,32 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
         examsDto.setQuestions(questionsList);
         return examsDto;
     }
+
+    //随机模拟考试
+    @Override
+    public ExamsDto randomExam(Long userId) {
+        List<Questions> randomQuestions = questionsService.getRandomQuestions();
+        ExamsDto examsDto = new ExamsDto();
+        examsDto.setQuestions(randomQuestions);
+        Long examsId = getExams(userId,0);
+        examsDto.setExamId(examsId);
+        return examsDto;
+    }
+
+
+    //生成考试记录
+    @Override
+    public Long getExams(Long userId,Integer type) {
+        Exams exams = new Exams();
+        DateFormat dateFormat = DateFormat.getDateTimeInstance();
+        String format = dateFormat.format(new Date());
+        exams.setExamsTime(format);
+        exams.setNumQuestions(15);
+        exams.setType(type);
+        exams.setUserId(userId);
+        this.save(exams);
+        return exams.getId();
+    }
+
+
 }

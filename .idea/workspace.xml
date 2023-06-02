@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="01">
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/UserExamsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UserExamsController.java" afterDir="false" />
+    <list default="true" id="68c29d41-ba16-4430-a082-b63f476d8586" name="Changes" comment="0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/ExamsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Dto/ExamsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Exams.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Questions.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Questions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/UserExams.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/UserExams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/congyijiu/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/ExamsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UserExamsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/controller/UserExamsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/ExamsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UserExamsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/UserExamsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/ExamsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UserExamsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/congyijiu/auth/service/impl/UserExamsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +106,8 @@
       <workItem from="1685457265162" duration="3380000" />
       <workItem from="1685508528410" duration="15208000" />
       <workItem from="1685610903695" duration="3629000" />
-      <workItem from="1685628105491" duration="4063000" />
+      <workItem from="1685628105491" duration="4317000" />
+      <workItem from="1685718254785" duration="3770000" />
     </task>
     <task id="LOCAL-00001" summary="tyfytf">
       <created>1685457919462</created>
@@ -155,7 +158,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685614465147</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="02">
+      <created>1685632258563</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685632258563</updated>
+    </task>
+    <task id="LOCAL-00009" summary="02">
+      <created>1685632289210</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685632289210</updated>
+    </task>
+    <task id="LOCAL-00010" summary="02">
+      <created>1685632490921</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685632490921</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +204,8 @@
     <MESSAGE value="awawa" />
     <MESSAGE value="awawaa" />
     <MESSAGE value="01" />
-    <option name="LAST_COMMIT_MESSAGE" value="01" />
+    <MESSAGE value="02" />
+    <MESSAGE value="03" />
+    <option name="LAST_COMMIT_MESSAGE" value="03" />
   </component>
 </project>

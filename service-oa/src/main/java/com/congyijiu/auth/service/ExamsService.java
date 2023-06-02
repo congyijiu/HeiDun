@@ -16,4 +16,8 @@ public interface ExamsService extends IService<Exams> {
     public ExamsDto startExam(Long userId,Long examId);
 
     public ExamsDto submitExams(Long userId, ExamsDto examsDto);
+
+    public ExamsDto randomExam(Long userId);
+
+    public Long getExams(Long userId,Integer type);
 }

@@ -9,4 +9,5 @@ import com.congyijiu.UserExams;
  */
 public interface UserExamsService extends IService<UserExams>{
 
+    public void submitExam(Long examId, int score);
 }
