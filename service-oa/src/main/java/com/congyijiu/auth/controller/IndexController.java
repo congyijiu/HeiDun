@@ -2,7 +2,7 @@ package com.congyijiu.auth.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.congyijiu.Users;
-import com.congyijiu.Vo.LoginVo;
+import com.congyijiu.Vo.UserVo;
 import com.congyijiu.auth.service.UsersService;
 import com.congyijiu.common.jwt.JwtHelper;
 import com.congyijiu.common.result.Result;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sun.security.provider.MD5;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +31,7 @@ public class IndexController {
 
     @ApiOperation("登录")
     @PostMapping("/login")
-    public Result login(@RequestBody LoginVo loginVo) {
+    public Result login(@RequestBody UserVo loginVo) {
 
         String username = loginVo.getUsername();
         String password = loginVo.getPassword();

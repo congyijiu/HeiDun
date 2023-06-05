@@ -1,11 +1,16 @@
 package com.congyijiu.auth.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.congyijiu.Dto.UsersDto;
 import com.congyijiu.Exams;
 import com.congyijiu.Users;
+import com.congyijiu.Vo.UserVo;
+import com.congyijiu.auth.service.ExamsService;
 import com.congyijiu.auth.service.UsersService;
 import com.congyijiu.common.jwt.JwtHelper;
 import com.congyijiu.common.result.Result;
+import com.google.code.kaptcha.Constants;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
@@ -13,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,13 +46,13 @@ public class UsersController {
     public Result updateUser(@RequestHeader("token") String token, @RequestBody UsersDto usersDto) {
         Long userId = JwtHelper.getUserId(token);
         Long id = usersDto.getId();
-        if(!userId.equals(id)) {
+        if (!userId.equals(id)) {
             return Result.fail("无权限");
         }
-        if(usersDto.getOldPassword() == null) {
+        if (usersDto.getOldPassword() == null) {
             Users byId = usersService.getById(userId);
             String password = byId.getPassword();
-            if(!password.equals(usersDto.getPassword())) {
+            if (!password.equals(usersDto.getPassword())) {
                 return Result.fail("密码错误");
             }
         }
@@ -62,6 +68,43 @@ public class UsersController {
         Long userId = JwtHelper.getUserId(token);
         List<Exams> appointmentList = usersService.getUsersAppointment(userId);
         return Result.ok(appointmentList);
+    }
+
+
+    @ApiOperation("验证码校验")
+    @GetMapping("/checkCode")
+    public boolean checkCode(HttpServletRequest request, @RequestParam("code") String code) {
+        String sessionCode = (String) request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
+        if (code.equals(sessionCode)) {
+            //验证正常返回true
+            return true;
+        } else {
+            //验证失败返回false
+            return false;
+        }
+    }
+
+    @ApiOperation("用户考试成绩查询")
+    @GetMapping("/getUsersexams")
+    public Result getUsers(@RequestBody UserVo userVo) {
+        String username = userVo.getUsername();
+        String idcard = userVo.getIdcard();
+        LambdaQueryWrapper<Users> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(Users::getUsername, username);
+        wrapper.eq(Users::getIdcard, idcard);
+        Users users = usersService.getOne(wrapper);
+        if (users == null) {
+            return Result.fail("用户不存在");
+        }
+        Long userId = users.getId();
+        List<Exams> usersExams = usersService.getUsersAppointment(userId);
+        ArrayList<Exams> examslist = new ArrayList<>();
+        for (Exams exams : usersExams) {
+            if (exams.getScore() != null) {
+                examslist.add(exams);
+            }
+        }
+        return Result.ok(examslist.get(0));
     }
 
 }

@@ -38,6 +38,7 @@ public class LoginCheckFilter implements Filter{
                 "/swagger-resources/*",
                 "/v2/*",
                 "/*",
+                "/users/checkCode",
         };
 
         //2、判断本次请求是否需要处理
