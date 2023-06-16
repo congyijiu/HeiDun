@@ -26,4 +26,7 @@ public class UserExams {
 
     @TableField("correct")
     private Integer correct;
+
+    @TableField("selected")
+    private Integer selected;
 }

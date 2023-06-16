@@ -34,7 +34,7 @@ public class ExamsController {
 
     @ApiOperation("开始考试")
     @PostMapping("/startExam/{examsTime}")
-    public Result startExams(@RequestHeader("token") String token , String examsTime) {
+    public Result startExams(@RequestHeader("token") String token , @PathVariable String examsTime) {
         Long userId = JwtHelper.getUserId(token);
         LambdaQueryWrapper<Exams> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(Exams::getUserId, userId);
@@ -49,10 +49,10 @@ public class ExamsController {
     }
 
     @ApiOperation("提交试卷")
-    @PostMapping("/submitExams")
-    public Result submitExams(@RequestHeader("token") String token , @RequestBody ExamsDto examsDto) {
+    @PostMapping("/submitExams/{examsId}")
+    public Result submitExams(@RequestHeader("token") String token , @PathVariable Long examsId) {
         Long userId = JwtHelper.getUserId(token);
-        ExamsDto examsDto1 = examsService.submitExams(userId, examsDto);
+        ExamsDto examsDto1 = examsService.submitExams(userId, examsId);
         return Result.ok(examsDto1);
     }
 

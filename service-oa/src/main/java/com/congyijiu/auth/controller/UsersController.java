@@ -37,6 +37,7 @@ public class UsersController {
     public Result getUser(@RequestHeader("token") String token) {
         Long userId = JwtHelper.getUserId(token);
         Users users = usersService.getById(userId);
+        users.setPassword(null);
         return Result.ok(users);
     }
 
@@ -70,19 +71,6 @@ public class UsersController {
         return Result.ok(appointmentList);
     }
 
-
-    @ApiOperation("验证码校验")
-    @GetMapping("/checkCode")
-    public boolean checkCode(HttpServletRequest request, @RequestParam("code") String code) {
-        String sessionCode = (String) request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
-        if (code.equals(sessionCode)) {
-            //验证正常返回true
-            return true;
-        } else {
-            //验证失败返回false
-            return false;
-        }
-    }
 
     @ApiOperation("用户考试成绩查询")
     @GetMapping("/getUsersexams")

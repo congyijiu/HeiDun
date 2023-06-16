@@ -1,5 +1,6 @@
 package com.congyijiu.auth.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.congyijiu.Dto.ExamsDto;
 import com.congyijiu.Exams;
@@ -34,7 +35,15 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
     @Override
     public ExamsDto startExam(Long userId, Long examId) {
         List<Questions> randomQuestions = questionsService.getRandomQuestions();
-
+        ArrayList<UserExams> userExams = new ArrayList<>();
+        for (Questions randomQuestion : randomQuestions) {
+            UserExams userExam = new UserExams();
+            userExam.setExamId(examId);
+            userExam.setQuestionId(randomQuestion.getId());
+            userExams.add(userExam);
+        }
+        //保存考试记录
+        userExamsService.saveBatch(userExams);
         ExamsDto examsDto = new ExamsDto();
         examsDto.setQuestions(randomQuestions);
         examsDto.setExamId(examId);
@@ -43,17 +52,23 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
 
     //提交考试
     @Override
-    public ExamsDto submitExams(Long userId, ExamsDto examsDto) {
-        List<Questions> questions = examsDto.getQuestions();
+    public ExamsDto submitExams(Long userId, Long examsId) {
+
+        //获取考试记录
+        LambdaQueryWrapper<UserExams> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(UserExams::getExamId, examsId);
+        List<UserExams> userExams = userExamsService.list(wrapper);
+        //获取考试题目编号集合
         ArrayList<Long> qId = new ArrayList<>();
-        for (Questions question : questions) {
-            //获取考试题目编号集合
-            Long id = question.getId();
-            qId.add(id);
+        for (UserExams userExam : userExams) {
+            Long questionId = userExam.getQuestionId();
+            qId.add(questionId);
         }
         //查询题目答案解析等
         List<Questions> questionsList = questionsService.listByIds(qId);
+        ExamsDto examsDto = new ExamsDto();
         examsDto.setQuestions(questionsList);
+        examsDto.setExamId(examsId);
         return examsDto;
     }
 

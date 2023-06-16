@@ -15,7 +15,7 @@ import java.util.List;
 public interface ExamsService extends IService<Exams> {
     public ExamsDto startExam(Long userId,Long examId);
 
-    public ExamsDto submitExams(Long userId, ExamsDto examsDto);
+    public ExamsDto submitExams(Long userId, Long examsId);
 
     public ExamsDto randomExam(Long userId);
 

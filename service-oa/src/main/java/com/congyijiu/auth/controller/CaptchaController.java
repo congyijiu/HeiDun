@@ -6,11 +6,15 @@ package com.congyijiu.auth.controller;
  */
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,16 +24,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
+@Api(tags = "验证码")
 @Controller
 @RestController
-@RequestMapping("/getimg")
+@RequestMapping("/captcha")
 public class CaptchaController {
     @Autowired
     private Producer captchaProducer;
 
     @Autowired
     private static Logger logger = LoggerFactory.getLogger(CaptchaController.class);
-    @RequestMapping
+    @ApiOperation("获取验证码图片")
+    @GetMapping("/getKaptchaImage")
     public ModelAndView getKaptchaImage(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession();
         String code = (String)session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
@@ -68,4 +74,18 @@ public class CaptchaController {
         }
         return null;
     }
+
+    @ApiOperation("验证码校验")
+    @GetMapping("/checkCode")
+    public boolean checkCode(HttpServletRequest request, @RequestParam("code") String code) {
+        String sessionCode = (String) request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
+        if (code.equals(sessionCode)) {
+            //验证正常返回true
+            return true;
+        } else {
+            //验证失败返回false
+            return false;
+        }
+    }
+
 }

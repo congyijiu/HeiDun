@@ -1,8 +1,11 @@
 package com.congyijiu.auth.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.congyijiu.Dto.ExamsDto;
+import com.congyijiu.Exams;
 import com.congyijiu.Questions;
 import com.congyijiu.UserExams;
+import com.congyijiu.auth.service.ExamsService;
 import com.congyijiu.auth.service.UserExamsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,33 +29,39 @@ public class UserExamsController {
     @Autowired
     private UserExamsService userExamsService;
 
+    @Autowired
+    private ExamsService examsService;
+
     @ApiOperation("保存用户考试记录并完善考试记录")
     @PostMapping("/SaveUserExam")
-    public void startExam(@RequestBody ExamsDto examsDto) {
-        //保存用户考试题目和正确情况
-        ArrayList<UserExams> userExams = new ArrayList<>();
-        List<Questions> questions = examsDto.getQuestions();
-        Long examId = examsDto.getExamId();
-        int num = questions.size();
-        int tureNum = 0;
-        for (Questions question : questions) {
-            //获取正确情况0错误1正确
-            Integer correct = question.getCorrect();
-            if(correct == 1) {
-                tureNum++;
-            }
-            //保存用户考试记录
-            UserExams userExam = new UserExams();
-            userExam.setExamId(examsDto.getExamId());
-            userExam.setQuestionId(question.getId());
-            userExam.setCorrect(correct);
-            userExam.setId(0L);
-            userExams.add(userExam);
-        }
-        int score = (int) ((tureNum * 1.0 / num) * 100);
-        //完善考试信息
-        userExamsService.submitExam(examId,score);
-        //保存用户考试记录
+    public void startExam(@RequestBody List<UserExams> userExams) {
+        UserExams userExams1 = userExams.get(0);
+        Long examId = userExams1.getExamId();
+        LambdaQueryWrapper<UserExams> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(UserExams::getExamId, examId);
+        //删除原先不完整的用户考试详情记录
+        userExamsService.remove(wrapper);
+        //保存完整的用户考试详情记录
         userExamsService.saveBatch(userExams);
+        //完善考试记录
+        int correctNum = 0;
+        for (UserExams userExam : userExams) {
+            Integer correct = userExam.getCorrect();
+            if (correct == 1) {
+                correctNum++;
+            }
+        }
+        int totalNum = userExams.size();
+        Integer score = correctNum / totalNum;
+        String result;
+        if (score >=60){
+            result = "通过";
+        }else {
+            result = "不通过";
+        }
+        Exams exams = new Exams();
+        exams.setId(examId);
+        exams.setScore(score);
+        exams.setResult(result);
     }
 }

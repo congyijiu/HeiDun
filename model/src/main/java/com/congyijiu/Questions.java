@@ -32,4 +32,7 @@ public class Questions {
 
     @TableField(exist = false)
     private Integer correct;
+
+    @TableField("explanation")
+    private String explanation;
 }

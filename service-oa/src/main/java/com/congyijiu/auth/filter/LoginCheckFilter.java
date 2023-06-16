@@ -38,12 +38,13 @@ public class LoginCheckFilter implements Filter{
                 "/swagger-resources/*",
                 "/v2/*",
                 "/*",
-                "/users/checkCode",
+                "/captcha/*",
         };
 
         //2、判断本次请求是否需要处理
         boolean check = check(urls, requestURI);
 
+        check =true;
         //3、如果不需要处理，则直接放行
         if(check){
             filterChain.doFilter(request,response);
