@@ -15,8 +15,9 @@ import java.net.Inet4Address;
  * @author congyijiu
  * @create 2023-05-30-23:48
  */
-@ApiModel(value="题目对象", description="")
+
 @Data
+@ApiModel(value="题目对象", description="")
 @TableName("Questions")
 public class Questions {
     private static final long serialVersionUID = 1L;

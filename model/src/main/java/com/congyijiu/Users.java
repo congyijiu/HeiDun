@@ -9,8 +9,9 @@ import lombok.Data;
  * @author congyijiu
  * @create 2023-05-30-23:35
  */
-@ApiModel(value="用户对象", description="")
+
 @Data
+@ApiModel(value="用户对象", description="")
 @TableName("Users")
 public class Users {
     private static final long serialVersionUID = 1L;

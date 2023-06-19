@@ -12,8 +12,9 @@ import lombok.Data;
  * @author congyijiu
  * @create 2023-05-30-23:46
  */
-@ApiModel(value="用户考试对象", description="")
+
 @Data
+@ApiModel(value="用户考试对象", description="")
 @TableName("user_exams")
 public class UserExams {
     private static final long serialVersionUID = 1L;
