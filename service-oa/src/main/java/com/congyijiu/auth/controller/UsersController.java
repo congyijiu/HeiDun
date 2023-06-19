@@ -93,7 +93,7 @@ public class UsersController {
         List<Exams> usersExams = usersService.getUsersAppointment(userId);
         ArrayList<Exams> examslist = new ArrayList<>();
         for (Exams exams : usersExams) {
-            if (exams.getScore() != null) {
+            if (exams.getStatus()==2) {
                 examslist.add(exams);
             }
         }
