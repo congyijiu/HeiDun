@@ -5,6 +5,7 @@ import com.congyijiu.Users;
 import com.congyijiu.Vo.UserVo;
 import com.congyijiu.auth.service.UsersService;
 import com.congyijiu.common.jwt.JwtHelper;
+import com.congyijiu.common.md5.MD5;
 import com.congyijiu.common.result.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -35,6 +36,7 @@ public class IndexController {
 
         String username = loginVo.getUsername();
         String password = loginVo.getPassword();
+        password  = MD5.encrypt(password);// 加密(不可逆)
 
         LambdaQueryWrapper<Users> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(Users::getUsername, username);

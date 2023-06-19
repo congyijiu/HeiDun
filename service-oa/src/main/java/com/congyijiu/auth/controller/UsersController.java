@@ -8,6 +8,7 @@ import com.congyijiu.Vo.UserVo;
 import com.congyijiu.auth.service.ExamsService;
 import com.congyijiu.auth.service.UsersService;
 import com.congyijiu.common.jwt.JwtHelper;
+import com.congyijiu.common.md5.MD5;
 import com.congyijiu.common.result.Result;
 import com.google.code.kaptcha.Constants;
 import com.sun.org.apache.bcel.internal.generic.NEW;
@@ -50,14 +51,18 @@ public class UsersController {
         if (!userId.equals(id)) {
             return Result.fail("无权限");
         }
-        if (usersDto.getOldPassword() == null) {
+        if (usersDto.getOldPassword() != null) {
             Users byId = usersService.getById(userId);
             String password = byId.getPassword();
-            if (!password.equals(usersDto.getPassword())) {
+            String oldPassword = usersDto.getOldPassword();
+            oldPassword = MD5.encrypt(oldPassword);
+            if (!password.equals(oldPassword)) {
                 return Result.fail("密码错误");
             }
         }
         Users users = new Users();
+        //密码加密
+        usersDto.setPassword(MD5.encrypt(usersDto.getPassword()));
         BeanUtils.copyProperties(usersDto, users);
         usersService.updateById(users);
         return Result.ok();

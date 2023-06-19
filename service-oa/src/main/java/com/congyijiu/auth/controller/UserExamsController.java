@@ -64,4 +64,14 @@ public class UserExamsController {
         exams.setScore(score);
         exams.setResult(result);
     }
+
+    @ApiOperation("通过考试id获取用户考试记录")
+    @PostMapping("/getUserExamByExamId")
+    public List<UserExams> getUserExamByExamId(@RequestBody Exams exams) {
+        Long examId = exams.getId();
+        LambdaQueryWrapper<UserExams> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(UserExams::getExamId, examId);
+        List<UserExams> userExams = userExamsService.list(wrapper);
+        return userExams;
+    }
 }
