@@ -2,21 +2,20 @@ package com.congyijiu.auth.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.congyijiu.Dto.ExamsDto;
+import com.congyijiu.Dto.UserExamsDto;
 import com.congyijiu.Exams;
 import com.congyijiu.Questions;
 import com.congyijiu.UserExams;
 import com.congyijiu.auth.service.ExamsService;
+import com.congyijiu.auth.service.QuestionsService;
 import com.congyijiu.auth.service.UserExamsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.text.DateFormat;
+import java.util.*;
 
 /**
  * @author congyijiu
@@ -31,6 +30,9 @@ public class UserExamsController {
 
     @Autowired
     private ExamsService examsService;
+
+    @Autowired
+    private QuestionsService questionsService;
 
     @ApiOperation("保存用户考试记录并完善考试记录")
     @PostMapping("/SaveUserExam")
@@ -63,15 +65,30 @@ public class UserExamsController {
         exams.setId(examId);
         exams.setScore(score);
         exams.setResult(result);
+        DateFormat dateFormat = DateFormat.getDateTimeInstance();
+        String format = dateFormat.format(new Date());
+        exams.setEndTime(format);
+        examsService.updateById(exams);
     }
 
     @ApiOperation("通过考试id获取用户考试记录")
-    @PostMapping("/getUserExamByExamId")
-    public List<UserExams> getUserExamByExamId(@RequestBody Exams exams) {
-        Long examId = exams.getId();
+    @PostMapping("/getUserExamByExamId/{examId}")
+    public Map<Exams,List<UserExamsDto>> getUserExamByExamId(@PathVariable Long examId) {
+        ArrayList<UserExamsDto> userExamsDtos = new ArrayList<>();
         LambdaQueryWrapper<UserExams> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(UserExams::getExamId, examId);
         List<UserExams> userExams = userExamsService.list(wrapper);
-        return userExams;
+        for (UserExams userExam : userExams) {
+            UserExamsDto userExamsDto = new UserExamsDto();
+            userExamsDto.setUserExams(userExam);
+            Long questionId = userExam.getQuestionId();
+            Questions questions = questionsService.getById(questionId);
+            userExamsDto.setQuestions(questions);
+            userExamsDtos.add(userExamsDto);
+        }
+        Exams exams = examsService.getById(examId);
+        HashMap<Exams, List<UserExamsDto>> map = new HashMap<>();
+        map.put(exams, userExamsDtos);
+        return map;
     }
 }

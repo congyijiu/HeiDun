@@ -29,9 +29,13 @@ public class Exams {
     @TableField("subject")
     private String subject;
 
-    @ApiModelProperty(value = "考试时间")
-    @TableField("exams_time")
-    private String examsTime;
+    @ApiModelProperty(value = "开始时间")
+    @TableField("start_time")
+    private String startTime;
+
+    @ApiModelProperty(value = "结束时间")
+    @TableField("end_time")
+    private String endTime;
 
     @ApiModelProperty(value = "题目数量")
     @TableField("num_questions")

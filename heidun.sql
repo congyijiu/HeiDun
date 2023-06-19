@@ -11,7 +11,7 @@
  Target Server Version : 80029
  File Encoding         : 65001
 
- Date: 16/06/2023 19:58:56
+ Date: 19/06/2023 14:14:29
 */
 
 SET NAMES utf8mb4;
@@ -23,8 +23,9 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `exams`;
 CREATE TABLE `exams`  (
   `id` int NOT NULL AUTO_INCREMENT COMMENT '考试id',
-  `subject` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `exams_time` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '考试时间',
+  `subject` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '考试名称',
+  `start_time` datetime NULL DEFAULT NULL COMMENT '开始时间',
+  `end_time` datetime NULL DEFAULT NULL COMMENT '结束时间',
   `num_questions` int NOT NULL COMMENT '题目数量',
   `status` int NULL DEFAULT NULL COMMENT '考试状态：0.未开始，1.已结束',
   `result` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '考试结果',
@@ -37,10 +38,10 @@ CREATE TABLE `exams`  (
 -- ----------------------------
 -- Records of exams
 -- ----------------------------
-INSERT INTO `exams` VALUES (1, '123', '2023-2023', 15, 0, NULL, NULL, 1, 0);
-INSERT INTO `exams` VALUES (2, NULL, NULL, 15, NULL, NULL, NULL, 1, 0);
-INSERT INTO `exams` VALUES (3, NULL, NULL, 15, NULL, NULL, NULL, 1, 0);
-INSERT INTO `exams` VALUES (4, NULL, '2023-6-2 23:59:54', 15, NULL, NULL, NULL, 1, 0);
+INSERT INTO `exams` VALUES (1, '123', '2023-06-02 00:00:00', NULL, 15, 0, NULL, NULL, 1, 0);
+INSERT INTO `exams` VALUES (2, NULL, NULL, NULL, 15, NULL, NULL, NULL, 1, 0);
+INSERT INTO `exams` VALUES (3, NULL, NULL, NULL, 15, NULL, NULL, NULL, 1, 0);
+INSERT INTO `exams` VALUES (4, NULL, '2023-06-02 00:00:00', NULL, 15, NULL, NULL, NULL, 1, 0);
 
 -- ----------------------------
 -- Table structure for questions
@@ -90,7 +91,7 @@ CREATE TABLE `user_exams`  (
   `correct` int NULL DEFAULT NULL COMMENT '正确情况',
   `selected` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 60 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 75 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_exams
@@ -128,6 +129,6 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, '从一九', '123456', '1213456', '123', '321');
+INSERT INTO `users` VALUES (1, '从一九', 'e10adc3949ba59abbe56e057f20f883e', '123', '321', '123');
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -69,6 +69,7 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
         ExamsDto examsDto = new ExamsDto();
         examsDto.setQuestions(questionsList);
         examsDto.setExamId(examsId);
+
         return examsDto;
     }
 
@@ -80,6 +81,15 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
         examsDto.setQuestions(randomQuestions);
         Long examsId = getExams(userId,0);
         examsDto.setExamId(examsId);
+        ArrayList<UserExams> userExams = new ArrayList<>();
+        for (Questions randomQuestion : randomQuestions) {
+            UserExams userExam = new UserExams();
+            userExam.setExamId(examsId);
+            userExam.setQuestionId(randomQuestion.getId());
+            userExams.add(userExam);
+        }
+        //保存考试记录
+        userExamsService.saveBatch(userExams);
         return examsDto;
     }
 
@@ -90,7 +100,7 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
         Exams exams = new Exams();
         DateFormat dateFormat = DateFormat.getDateTimeInstance();
         String format = dateFormat.format(new Date());
-        exams.setExamsTime(format);
+        exams.setStartTime(format);
         exams.setNumQuestions(15);
         exams.setType(type);
         exams.setUserId(userId);

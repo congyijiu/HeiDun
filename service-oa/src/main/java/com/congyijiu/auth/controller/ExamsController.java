@@ -33,12 +33,12 @@ public class ExamsController {
     }
 
     @ApiOperation("开始考试")
-    @PostMapping("/startExam/{examsTime}")
-    public Result startExams(@RequestHeader("token") String token , @PathVariable String examsTime) {
+    @PostMapping("/startExam/{subject}")
+    public Result startExams(@RequestHeader("token") String token , @PathVariable String subject) {
         Long userId = JwtHelper.getUserId(token);
         LambdaQueryWrapper<Exams> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(Exams::getUserId, userId);
-        wrapper.eq(Exams::getExamsTime, examsTime);
+        wrapper.eq(Exams::getSubject, subject);
         Exams exams = examsService.getOne(wrapper);
         if(exams == null) {
             return Result.fail("没有报名该考试");
@@ -64,4 +64,13 @@ public class ExamsController {
         return Result.ok(examsDto);
     }
 
+    @ApiOperation("通过用户id获取考试列表")
+    @GetMapping("/getExamsList")
+    public Result getExamsList(@RequestHeader("token") String token) {
+        Long userId = JwtHelper.getUserId(token);
+        LambdaQueryWrapper<Exams> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(Exams::getUserId, userId);
+        wrapper.orderByDesc(Exams::getStartTime);
+        return Result.ok(examsService.list(wrapper));
+    }
 }
