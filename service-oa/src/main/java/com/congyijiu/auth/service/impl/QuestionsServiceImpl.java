@@ -24,7 +24,7 @@ public class QuestionsServiceImpl extends ServiceImpl<QuestionsMapper, Questions
         QueryWrapper<Questions> wrapper = new QueryWrapper<>();
         wrapper.select("id", "description", "options")
                 .orderByAsc("RAND()")
-                .last("limit 15");
+                .last("limit 25");
         List<Questions> questionsList = this.list(wrapper);
         return questionsList;
     }

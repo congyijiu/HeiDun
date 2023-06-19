@@ -12,6 +12,7 @@ import com.congyijiu.auth.service.QuestionsService;
 import com.congyijiu.auth.service.UserExamsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -31,6 +32,8 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
     @Autowired
     private UserExamsService userExamsService;
 
+
+
     //开始考试
     @Override
     public ExamsDto startExam(Long userId, Long examId) {
@@ -42,6 +45,11 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
             userExam.setQuestionId(randomQuestion.getId());
             userExams.add(userExam);
         }
+        Exams exams = new Exams();
+        exams.setId(examId);
+        //设置考试状态：1-考试中
+        exams.setStatus(1);
+        this.updateById(exams);
         //保存考试记录
         userExamsService.saveBatch(userExams);
         ExamsDto examsDto = new ExamsDto();
@@ -52,28 +60,63 @@ public class ExamsServiceImpl extends ServiceImpl<ExamsMapper, Exams> implements
 
     //提交考试
     @Override
-    public ExamsDto submitExams(Long userId, Long examsId) {
-
-        //获取考试记录
+    public Long submitExams(List<UserExams> userExams) {
+        //获取当前考试id
+        UserExams userExams1 = userExams.get(0);
+        Long examId = userExams1.getExamId();
         LambdaQueryWrapper<UserExams> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(UserExams::getExamId, examsId);
-        List<UserExams> userExams = userExamsService.list(wrapper);
-        //获取考试题目编号集合
+        wrapper.eq(UserExams::getExamId, examId);
+        //删除原先不完整的用户考试详情记录
+        userExamsService.remove(wrapper);
+
         ArrayList<Long> qId = new ArrayList<>();
         for (UserExams userExam : userExams) {
             Long questionId = userExam.getQuestionId();
             qId.add(questionId);
         }
+
         //查询题目答案解析等
         List<Questions> questionsList = questionsService.listByIds(qId);
-        ExamsDto examsDto = new ExamsDto();
-        examsDto.setQuestions(questionsList);
-        examsDto.setExamId(examsId);
 
-        return examsDto;
+        //正确题目数量
+        int correctNum = 0;
+        //完善用户考试详情记录
+        for (int i =0;i<userExams.size();i++) {
+            UserExams userExam = userExams.get(i);
+            Questions questions = questionsList.get(i);
+            Integer answer = questions.getAnswer();
+            Integer selected = userExam.getSelected();
+            if (answer.equals(selected)) {
+                userExam.setCorrect(1);
+                correctNum++;
+            }else {
+                userExam.setCorrect(0);
+            }
+        }
+
+        //保存完整的用户考试详情记录
+        userExamsService.saveBatch(userExams);
+
+        //完善考试记录
+        Integer score = correctNum * 4;
+        String result;
+        if (score >=60){
+            result = "通过";
+        }else {
+            result = "不通过";
+        }
+        Exams exams = new Exams();
+        exams.setId(examId);
+        exams.setScore(score);
+        exams.setResult(result);
+        exams.setEndTime(DateFormat.getDateTimeInstance().format(new Date()));
+        //设置考试状态：2-考试结束
+        exams.setStatus(2);
+        //保存考试记录
+        this.updateById(exams);
+        return examId;
     }
 
-    //随机模拟考试
     @Override
     public ExamsDto randomExam(Long userId) {
         List<Questions> randomQuestions = questionsService.getRandomQuestions();

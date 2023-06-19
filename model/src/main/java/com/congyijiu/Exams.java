@@ -1,9 +1,6 @@
 package com.congyijiu;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -30,11 +27,11 @@ public class Exams {
     private String subject;
 
     @ApiModelProperty(value = "开始时间")
-    @TableField("start_time")
+    @TableField(value = "start_time",updateStrategy = FieldStrategy.NOT_EMPTY)
     private String startTime;
 
     @ApiModelProperty(value = "结束时间")
-    @TableField("end_time")
+    @TableField(value = "end_time",updateStrategy = FieldStrategy.NOT_EMPTY)
     private String endTime;
 
     @ApiModelProperty(value = "题目数量")

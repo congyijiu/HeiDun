@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.congyijiu.Dto.ExamsDto;
 import com.congyijiu.Exams;
 import com.congyijiu.Questions;
+import com.congyijiu.UserExams;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -15,7 +17,7 @@ import java.util.List;
 public interface ExamsService extends IService<Exams> {
     public ExamsDto startExam(Long userId,Long examId);
 
-    public ExamsDto submitExams(Long userId, Long examsId);
+    public Long submitExams(List<UserExams> userExams);
 
     public ExamsDto randomExam(Long userId);
 
